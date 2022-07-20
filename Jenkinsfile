@@ -10,13 +10,13 @@ pipeline{
 
         stage('Build') {
             steps {
-                sh 'docker build -t 172.16.10.109/nodeapp_test:latest .'
+                sh 'docker build -t 172.16.10.109/nodejs:latest .'
             }
         }
 
         stage('Push') {
             steps {
-                sh 'docker push 172.16.10.109/nodeapp_test:latest'
+                sh 'docker push 172.16.10.109/nodejs:latest'
             }
         }
     }
