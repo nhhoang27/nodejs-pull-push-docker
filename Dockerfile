@@ -1,13 +1,5 @@
-FROM node:lastest
+FROM nginx:1.17.6
 
-WORKDIR /usr/src/app
+COPY nginx.conf /etc/nginx/nginx.conf
 
-COPY package*.json ./
-
-RUN npm install 
-
-COPY . .
-
-EXPOSE 3001
-
-CMD [ "node", "index.js" ]
+COPY index.html /usr/share/nginx/html/index.html
