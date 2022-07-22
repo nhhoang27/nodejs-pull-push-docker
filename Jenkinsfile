@@ -23,15 +23,15 @@ pipeline{
         stage('Deploying to k8s') {
             steps {
                 script {
-                    kubernetesDeploy(configs: 'deploymentservice.yml', kubeconfigId: 'k8s-worker01')
+                    kubernetesDeploy(configs: 'deploymentservice.yml', kubeconfigId: 'kubernetes')
                 }
             }
         }
     }
     
-    post {
-        always {
-            cleanWs()
-        }
-    }
+//     post {
+//         always {
+//             cleanWs()
+//         }
+//     }
 } 
